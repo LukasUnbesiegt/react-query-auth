@@ -5,26 +5,10 @@ import {
   useQueryClient,
   QueryKey,
   UseQueryOptions,
-  QueryFunction,
-  MutationFunction,
   UseMutationOptions,
 } from '@tanstack/react-query';
 
-export interface ReactQueryAuthConfig<
-  User,
-  LoginCredentials,
-  RegisterCredentials
-> {
-  userFn: QueryFunction<User, QueryKey>;
-  loginFn: MutationFunction<User, LoginCredentials>;
-  registerFn: MutationFunction<User, RegisterCredentials>;
-  logoutFn: MutationFunction<unknown, unknown>;
-  userKey?: QueryKey;
-}
-
-export interface AuthProviderProps {
-  children: React.ReactNode;
-}
+import { ReactQueryAuthConfig, AuthProviderProps } from './types/main';
 
 export function configureAuth<
   User,
